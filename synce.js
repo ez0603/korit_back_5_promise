@@ -1,5 +1,9 @@
 main();
 
+// async 특징
+// 1. promise를 함수화한것
+// 2. setTimeout을 await 할 수 없음
+
 function main() {
     p1(3, "data1").then(result => console.log(result));
     setTimeout(() => p2("data").then(result => console.log(result)), 4000);
@@ -14,7 +18,7 @@ function p1(time, data) {
         }, time * 1000);
     });
 }
-
+ 
 async function p2(data) { // async = resolve가 없기 때문에 return을 해줘야함
     return data;
 }
